@@ -1,0 +1,27 @@
+{
+  "name": "oopproject",
+  "version": "1.0.0",
+  "description": "team staff roster",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/13tinydots/OOPproject.git"
+  },
+  "author": "13tinydots",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/13tinydots/OOPproject/issues"
+  },
+  "homepage": "https://github.com/13tinydots/OOPproject#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1",
+    "jest": "^27.0.6"
+  }
+}
