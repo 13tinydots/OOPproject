@@ -91,7 +91,7 @@ function addAnotherEmployee(){
     ]).then((response) => {
         if (response === "yes") {
             init();
-        } 
+        }
         //else //insert HTML generate ref here.
     })
 }
