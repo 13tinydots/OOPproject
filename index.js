@@ -89,7 +89,8 @@ function addAnotherEmployee(){
             choices: ["yes", "no"]
         }
     ]).then((response) => {
-        if (response === "yes") {
+        // called object value by using dot notation
+        if (response.add === "yes") {
             init();
         }
         //else //insert HTML generate ref here.
@@ -99,10 +100,10 @@ function addAnotherEmployee(){
 function init() {
     inquirer
     .prompt(questions)
-    .then((answers) => {
-        if(answers.role == "Manager"){
+    .then(({answers}) => {
+        if(answers.role === "Manager"){
             askManagerQuestions(answers)
-        } else if (answers.role == "Engineer"){
+        } else if (answers.role === "Engineer"){
             askEngineerQuestions(answers)
         } else {
             askInternQuestions(answers)
