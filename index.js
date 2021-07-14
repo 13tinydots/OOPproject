@@ -6,6 +6,7 @@ const {Employee} = require('./lib/classes');
 const {Manager}= require('./lib/classes');
 const {Engineer} = require('./lib/classes');
 const {Intern} = require('./lib/classes');
+const generateHtml = require('./src/template');
 
 const arrOfEmployees = [];
 
@@ -74,11 +75,12 @@ function askInternQuestions({employeeName, employeeID, emailAddress, role}) {
         addAnotherEmployee();
     })
 }
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, err=> {
-//         if(err) throw err
-//     } )
-// }
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err=> {
+        if(err) throw err
+    } )
+}
 
 function addAnotherEmployee(){
     inquirer.prompt([
@@ -92,15 +94,17 @@ function addAnotherEmployee(){
         // called object value by using dot notation
         if (response.add === "yes") {
             init();
-        }
-        //else //insert HTML generate ref here.
+        } else {
+        var rosterPage = generateHtml(arrOfEmployees);
+        };
+        writeToFile("team.html", rosterPage)
     })
 }
 
 function init() {
     inquirer
     .prompt(questions)
-    .then(({answers}) => {
+    .then((answers) => {
         if(answers.role === "Manager"){
             askManagerQuestions(answers)
         } else if (answers.role === "Engineer"){
@@ -112,5 +116,3 @@ function init() {
 }
 
 init()
-// const manager =  new Manager("Name", "Id", "Email", "Manager", "OfficeNum")
-// console.log(manager)
