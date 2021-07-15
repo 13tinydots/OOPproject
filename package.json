@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/13tinydots/OOPproject#readme",
   "dependencies": {
+    "bulma": "^0.9.3",
     "inquirer": "^8.1.1",
     "jest": "^27.0.6"
   }
