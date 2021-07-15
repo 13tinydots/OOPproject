@@ -1,7 +1,9 @@
 
+
 function generateHtml(data) {
+
     for(i=0; i<data.length; i++){
-        if(data[i].getRole() === "Manager") {
+        // if(data[i].getRole() === "Manager") {
             return `<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -21,7 +23,13 @@ function generateHtml(data) {
                 </section>
                 <section>
                     <div class="container max-width">
-                        
+                        <div class="card">
+                        <div class="card-content">
+                        <div class="content">
+                            Manager1
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 </section>
             
@@ -30,7 +38,7 @@ function generateHtml(data) {
             `;
         }
     }
-}
+
 
 
 module.exports = generateHtml;

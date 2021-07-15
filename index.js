@@ -1,4 +1,3 @@
-const { SSL_OP_TLS_BLOCK_PADDING_BUG } = require('constants');
 const fs = require('fs');
 const inquirer = require("inquirer");
 const { inherits } = require('util');
@@ -7,7 +6,7 @@ const {Manager}= require('./lib/classes');
 const {Engineer} = require('./lib/classes');
 const {Intern} = require('./lib/classes');
 const generateHtml = require('./src/template');
-
+var rosterPage = ""
 const arrOfEmployees = [];
 
 const questions = ([
@@ -77,7 +76,7 @@ function askInternQuestions({employeeName, employeeID, emailAddress, role}) {
 }
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err=> {
+    fs.writeFile(fileName, data, err => {
         if(err) throw err
     } )
 }
@@ -92,10 +91,10 @@ function addAnotherEmployee(){
         }
     ]).then((response) => {
         // called object value by using dot notation
-        if (response.add === "yes") {
+        if (response.add == "yes") {
             init();
         } else {
-        var rosterPage = generateHtml(arrOfEmployees);
+        rosterPage = generateHtml(arrOfEmployees);
         };
         writeToFile("team.html", rosterPage)
     })
