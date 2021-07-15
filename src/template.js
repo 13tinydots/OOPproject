@@ -1,10 +1,47 @@
 
+let details = ""
 
 function generateHtml(data) {
-
     for(i=0; i<data.length; i++){
-        // if(data[i].getRole() === "Manager") {
-            return `<!DOCTYPE html>
+    eeName = data[i].employeeName;
+    eeRole = data[i].role;
+    eeID = data[i].employeeID;
+    eeOfc = data[i].officeNumber;
+    eeGithub = data[i].github;
+    eeSchool = data[i].school;
+    eeEmail = data[i].emailAddress
+
+    if (data[i].role = "Manager") {
+        details = details.concat(`<div class="card">
+        <div class="card-content">
+            <div class="content">
+            ID: ${eeID}
+            </div>
+            <div class="content">
+            Email: ${eeEmail}
+            </div>
+            <div class="content">
+            Office number: ${eeOfc}
+            </div>
+        </div>
+    </div>`);
+    } else if (data[i].role = "Engineer") {
+        details = details.concat(`<div class="card">
+        <div class="card-content">
+            <div class="content">
+            ID: ${eeID}
+            </div>
+            <div class="content">
+            Email: ${eeEmail}
+            </div>
+            <div class="content">
+            Github: ${eeGithub}
+            </div>
+        </div>
+    </div>`);
+    };
+}
+    return `<!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
@@ -14,6 +51,7 @@ function generateHtml(data) {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
                 <title>My Team</title>
             </head>
+            <div class="container">
                 <section class="hero is-danger">
                     <div class="hero-body">
                         <h1 class="title is-2">
@@ -21,15 +59,10 @@ function generateHtml(data) {
                         </h1>
                     </div>
                 </section>
+            </div>
                 <section>
                     <div class="container max-width">
-                        <div class="card">
-                        <div class="card-content">
-                        <div class="content">
-                            Manager1
-                        </div>
-                        </div>
-                    </div>
+                    ${details}                        
                     </div>
                 </section>
             
@@ -37,7 +70,7 @@ function generateHtml(data) {
             </html>
             `;
         }
-    }
+   // }
 
 
 
