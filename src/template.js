@@ -11,7 +11,8 @@ function generateHtml(data) {
     eeSchool = data[i].school;
     eeEmail = data[i].emailAddress
 
-    if (data[i].role = "Manager") {
+    switch (data[i].role) {
+        case "Manager":
         details = details.concat(`<div class="card">
         <div class="card-content">
             <div class="content">
@@ -25,7 +26,8 @@ function generateHtml(data) {
             </div>
         </div>
     </div>`);
-    } else if (data[i].role = "Engineer") {
+        break;
+    case "Engineer":
         details = details.concat(`<div class="card">
         <div class="card-content">
             <div class="content">
@@ -39,7 +41,23 @@ function generateHtml(data) {
             </div>
         </div>
     </div>`);
-    };
+        break;
+    default:
+        details = details.concat(`<div class="card">
+        <div class="card-content">
+            <div class="content">
+            ID: ${eeID}
+            </div>
+            <div class="content">
+            Email: ${eeEmail}
+            </div>
+            <div class="content">
+            School: ${eeSchool}
+            </div>
+        </div>
+    </div>`);
+    }
+
 }
     return `<!DOCTYPE html>
             <html lang="en">
