@@ -22,7 +22,7 @@ function generateHtml(data) {
         </div>
         <div class="message-body">
             ID: ${eeID}<br>
-            <br>Email: ${eeEmail}<br>
+            <br>Email: <a href="mailto:${eeEmail}">${eeEmail}</a><br>
             <br>Office number: ${eeOfc}<br>
         </div>
     </div>
@@ -38,24 +38,24 @@ function generateHtml(data) {
         </div>
         <div class="message-body">
             ID: ${eeID}<br>
-            <br>Email: ${eeEmail}<br>
-            <br>Github: ${eeGithub}<br>
+            <br>Email: <a href="mailto:${eeEmail}">${eeEmail}</a><br>
+            <br>Github: <a href="https://github.com/${eeGithub}">${eeGithub}</a><br>
         </div>
         </div>
     </div>`);
         break;
     default:
-        details = details.concat(`
-        <div class="column is-one-quarter"><div class="message is-info">
-            <div class="message-header">
-                <div class="title is-4">
-                    <p>${eeName}</p>
-                    <p><i class="fas fa-school">&nbsp;</i>${eeRole}</p>
+        details = details.concat(`<div class="column is-one-quarter">
+            <div class="message is-info">
+                <div class="message-header">
+                    <div class="title is-4">
+                        <p>${eeName}</p>
+                        <p><i class="fas fa-school">&nbsp;</i>${eeRole}</p>
                 </div>
             </div>
         <div class="message-body">
             ID: ${eeID}<br>
-            <br>Email: ${eeEmail}<br>
+            <br>Email: <a href="mailto:${eeEmail}">${eeEmail}</a><br>
             <br>School: ${eeSchool}<br>
         </div>
     </div>
@@ -74,7 +74,8 @@ function generateHtml(data) {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
                 <title>My Team</title>
             </head>
-                <div class="container">
+                <div class="container-fluid">
+                <div class="row">
                     <section class="hero is-danger">
                         <div class="hero-body">
                             <h1 class="title is-2">
@@ -82,11 +83,12 @@ function generateHtml(data) {
                             </h1>
                         </div>
                     </section>
+                    </div>
                 </div>
                     <section>
                         <br>
                         <div class="container max-width">
-                            <div class="columns">
+                            <div class="columns is-centered">
                                 ${details}
                             </div>
                         </div>
