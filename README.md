@@ -23,3 +23,5 @@ This project is not open for contribution.
 Jest is the package test option with four tests written. Run each test individually.
 
 For more information contact the author at github.com/13tinydots.
+
+https://www.loom.com/share/5339a1eac5254e148d1e56861d9940a2
