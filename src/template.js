@@ -17,7 +17,7 @@ function generateHtml(data) {
         <div class="message-header">
             <div class="title is-4">
                 <p>${eeName}</p>
-                <p>${eeRole}</p>
+                <p><i class="fas fa-mug-hot">&nbsp;</i>${eeRole}</p>
             </div>
         </div>
         <div class="message-body">
@@ -33,7 +33,7 @@ function generateHtml(data) {
         <div class="message-header">
             <div class="title is-4">
                 <p>${eeName}</p>
-                <p>${eeRole}</p>
+                <p><i class="fas fa-glasses">&nbsp;</i>${eeRole}</p>
             </div>
         </div>
         <div class="message-body">
@@ -50,7 +50,7 @@ function generateHtml(data) {
             <div class="message-header">
                 <div class="title is-4">
                     <p>${eeName}</p>
-                    <p>${eeRole}</p>
+                    <p><i class="fas fa-school">&nbsp;</i>${eeRole}</p>
                 </div>
             </div>
         <div class="message-body">
@@ -64,12 +64,13 @@ function generateHtml(data) {
 
 }
     return `<!DOCTYPE html>
-            <html lang="en">
+        <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/ac4b8ce29b.js" crossorigin="anonymous"></script>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
                 <title>My Team</title>
             </head>
