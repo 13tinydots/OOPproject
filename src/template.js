@@ -13,8 +13,12 @@ function generateHtml(data) {
 
     switch (data[i].role) {
         case "Manager":
-        details = details.concat(`<div class="card">
+        details = details.concat(`<div class="column">
+        <div class="card">
         <div class="card-content">
+        <div class="title is-4"><p>${eeName}</p>
+        <p>${eeRole}</p>
+        </div>
             <div class="content">
             ID: ${eeID}
             </div>
@@ -25,26 +29,36 @@ function generateHtml(data) {
             Office number: ${eeOfc}
             </div>
         </div>
+    </div>
     </div>`);
         break;
     case "Engineer":
-        details = details.concat(`<div class="card">
-        <div class="card-content">
-            <div class="content">
-            ID: ${eeID}
-            </div>
-            <div class="content">
-            Email: ${eeEmail}
-            </div>
-            <div class="content">
-            Github: ${eeGithub}
+        details = details.concat(`<div class="column">
+        <div class="card">
+            <div class="card-content">
+            <div class="title is-4"><p>${eeName}</p>
+        <p>${eeRole}</p>
+        </div>
+                <div class="content">
+                ID: ${eeID}
+                </div>
+                <div class="content">
+                Email: ${eeEmail}
+                </div>
+                <div class="content">
+                Github: ${eeGithub}
+                </div>
             </div>
         </div>
     </div>`);
         break;
     default:
-        details = details.concat(`<div class="card">
+        details = details.concat(`<div class="column">
+        <div class="card">
         <div class="card-content">
+        <div class="title is-4"><p>${eeName}</p>
+        <p>${eeRole}</p>
+        </div>
             <div class="content">
             ID: ${eeID}
             </div>
@@ -55,6 +69,7 @@ function generateHtml(data) {
             School: ${eeSchool}
             </div>
         </div>
+    </div>
     </div>`);
     }
 
@@ -80,10 +95,11 @@ function generateHtml(data) {
             </div>
                 <section>
                     <div class="container max-width">
+                    <div class="columns">
                     ${details}                        
                     </div>
                 </section>
-            
+                </div>
             </body>
             </html>
             `;
