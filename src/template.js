@@ -13,61 +13,50 @@ function generateHtml(data) {
 
     switch (data[i].role) {
         case "Manager":
-        details = details.concat(`<div class="column">
-        <div class="card">
-        <div class="card-content">
-        <div class="title is-4"><p>${eeName}</p>
-        <p>${eeRole}</p>
+        details = details.concat(`<div class="column is-one-quarter"><div class="message is-info">
+        <div class="message-header">
+            <div class="title is-4">
+                <p>${eeName}</p>
+                <p>${eeRole}</p>
+            </div>
         </div>
-            <div class="content">
-            ID: ${eeID}
-            </div>
-            <div class="content">
-            Email: ${eeEmail}
-            </div>
-            <div class="content">
-            Office number: ${eeOfc}
-            </div>
+        <div class="message-body">
+            ID: ${eeID}<br>
+            <br>Email: ${eeEmail}<br>
+            <br>Office number: ${eeOfc}<br>
         </div>
     </div>
     </div>`);
         break;
     case "Engineer":
-        details = details.concat(`<div class="column">
-        <div class="card">
-            <div class="card-content">
-            <div class="title is-4"><p>${eeName}</p>
-        <p>${eeRole}</p>
-        </div>
-                <div class="content">
-                ID: ${eeID}
-                </div>
-                <div class="content">
-                Email: ${eeEmail}
-                </div>
-                <div class="content">
-                Github: ${eeGithub}
-                </div>
+        details = details.concat(`<div class="column is-one-quarter"><div class="message is-info">
+        <div class="message-header">
+            <div class="title is-4">
+                <p>${eeName}</p>
+                <p>${eeRole}</p>
             </div>
+        </div>
+        <div class="message-body">
+            ID: ${eeID}<br>
+            <br>Email: ${eeEmail}<br>
+            <br>Github: ${eeGithub}<br>
+        </div>
         </div>
     </div>`);
         break;
     default:
-        details = details.concat(`<div class="column">
-        <div class="card">
-        <div class="card-content">
-        <div class="title is-4"><p>${eeName}</p>
-        <p>${eeRole}</p>
-        </div>
-            <div class="content">
-            ID: ${eeID}
+        details = details.concat(`
+        <div class="column is-one-quarter"><div class="message is-info">
+            <div class="message-header">
+                <div class="title is-4">
+                    <p>${eeName}</p>
+                    <p>${eeRole}</p>
+                </div>
             </div>
-            <div class="content">
-            Email: ${eeEmail}
-            </div>
-            <div class="content">
-            School: ${eeSchool}
-            </div>
+        <div class="message-body">
+            ID: ${eeID}<br>
+            <br>Email: ${eeEmail}<br>
+            <br>School: ${eeSchool}<br>
         </div>
     </div>
     </div>`);
@@ -84,27 +73,29 @@ function generateHtml(data) {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
                 <title>My Team</title>
             </head>
-            <div class="container">
-                <section class="hero is-danger">
-                    <div class="hero-body">
-                        <h1 class="title is-2">
-                            My Team
-                        </h1>
-                    </div>
-                </section>
-            </div>
-                <section>
-                    <div class="container max-width">
-                    <div class="columns">
-                    ${details}                        
-                    </div>
-                </section>
+                <div class="container">
+                    <section class="hero is-danger">
+                        <div class="hero-body">
+                            <h1 class="title is-2">
+                                My Team
+                            </h1>
+                        </div>
+                    </section>
                 </div>
-            </body>
+                    <section>
+                        <br>
+                        <div class="container max-width">
+                            <div class="columns">
+                                ${details}
+                            </div>
+                        </div>
+                        </section>
+                    </div>
+                </body>
             </html>
             `;
         }
-   // }
+
 
 
 
